@@ -1,0 +1,66 @@
+
+
+
+Setup the layout (40 mins)
+  header 
+  main section 
+  footer 
+
+Routing (45 mins)
+  5 characteristics 
+  2 characteristics [TODO]
+
+Netflix (4 hours)
+  Props 
+  States 
+  Events 
+  Lists & Keys 
+  Conditional Rendering 
+
+Setting up REST API for the app 
+User manager CRUD App 
+  Create User 
+  List Users 
+  User Details 
+    Edit user [TODO]
+    Delete User [TODO]
+
+=====
+E-commerce App (Context API)
+  List Products 
+  Add to Cart 
+
+Todos App (useReducer hook)
+
+Debugging 
+PErformance tuning 
+
+Zustand 
+
+Build & Deploy 
+
+
+
+====
+
+ Thinking in React 
+===
+  Step 0: Identifying the number of components 
+  Step 1: Comp hierarhcy
+
+
+components
+=====
+  2 Types 
+  ===
+    1. Functional Components [TO LEARN]
+      1.1 Functional Component with Named Function
+          header component
+      1.2 Functional Component with Anonymous Function
+          footer component
+      1.3 Functional Component with Arrow Function
+    2. Class Components [NOT RECOMMENDED]
+
+   
+
+
