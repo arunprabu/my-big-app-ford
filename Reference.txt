@@ -1,17 +1,6 @@
 
-
-
-Setup the layout (40 mins)
-  header 
-  main section 
-  footer 
-
-Routing (45 mins)
-  5 characteristics 
-  2 characteristics [TODO]
-
 Netflix (4 hours)
-  Props 
+  Props [DONE]
   States 
   Events 
   Lists & Keys 
@@ -63,4 +52,58 @@ components
 
    
 
+Routing 
+====
+  npm install react-router-dom
 
+Steps 
+====
+  1. identify the routes (urls) and menus 
+    - Home            -- url: /
+    - Netflix         -- url: /netflix
+    - Users           -- url: /users
+    - About           -- url: /about`
+    - Products        -- url: /products
+    - Todos           -- url: /todos
+    
+  2. create a component for each route  
+    - url: /            -- component: HomePage
+    - url: /netflix     -- component: NetflixPage
+    - url: /users       -- component: UsersPage
+    - url: /about       -- component: AboutPage
+    - url: /products    -- component: ProductsPage
+    - url: /todos       -- component: TodosPage
+
+  3. setup the routes in the App.tsx file
+    - import { BrowserRouter } from 'react-router-dom';
+  
+  4. Configure the routes in the App.tsx file
+      
+
+
+Cross Component Communication
+===
+  1. Parent to Child Component Communication
+      using props
+  2. Child to Parent Component Communication
+      using props and events 
+  3. Any to Any Component Communication
+      using 
+        1. Context API (part of React)
+        2. Redux / Redux Toolkit / Zustand / Recoil / MobX 
+
+      
+JSX Limitations
+===
+  1. You must a separate closing tag or self closing tag
+  2. class attribute is not allowed. it must be className
+  3. style attribute will expect expression. inside which you need to have object 
+  4. JSX expressions must have one parent element.
+
+Rules of Hooks 
+====
+  1. Only call Hooks at the Top Level
+  2. Don’t call Hooks inside loops, conditions, or nested functions.
+  3. Call Hooks from React Function Components
+  4. Call Hooks from regular JavaScript functions and classes
+  5. Call Hooks from custom Hooks
