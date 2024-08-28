@@ -18,11 +18,11 @@ const TrendingShowList = () => {
       description: "Game of Thrones is an epic fantasy series.",
     },
     {
-      title: "The Shawshank Redemption",
+      title: "The Shawshank...",
       category: "Drama",
       thumbnail:
         "https://image.tmdb.org/t/p/w500/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg",
-      description: "The Shawshank Redemption, released in 1994, is a drama film directed by Frank Darabont.",
+      description: "The Shawshank Redemption, released in 1994, is a drama film",
     },
   ]); 
 

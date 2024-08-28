@@ -21,6 +21,7 @@ import UsersPage from './pages/UsersPage';
 import ProductsPage from './pages/ProductsPage';
 import TodosPage from './pages/TodosPage';
 import AboutPage from './pages/AboutPage';
+import CreateUser from './components/users/CreateUser';
 
 // function component with named function
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/netflix" element={<NetflixPage />} />
         <Route path="/users" element={<UsersPage />} />
+        <Route path="/users/create" element={<CreateUser />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/todos" element={<TodosPage />} />
         <Route path="/about" element={<AboutPage />} />

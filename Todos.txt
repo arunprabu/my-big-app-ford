@@ -1,3 +1,4 @@
 1. Implement Page title react-helmet-async 
 2. Setup Active Menu
-3. Implement Page Not Found  
+3. Implement Page Not Found
+4. Implement Manage Favorite  by passing id from the child component -- in RecommendedShow to RecommendedShowList

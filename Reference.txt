@@ -1,10 +1,10 @@
 
 Netflix (4 hours)
   Props [DONE]
-  States 
-  Events 
-  Lists & Keys 
-  Conditional Rendering 
+  States [DONE]
+  Events [DONE]
+  Lists & Keys  [DONE]
+  Conditional Rendering  [DONE]
 
 Setting up REST API for the app 
 User manager CRUD App 
@@ -83,9 +83,9 @@ Steps
 
 Cross Component Communication
 ===
-  1. Parent to Child Component Communication
+  1. Parent to Child Component Communication  [DONE]
       using props
-  2. Child to Parent Component Communication
+  2. Child to Parent Component Communication  [DONE]
       using props and events 
   3. Any to Any Component Communication
       using 
@@ -105,5 +105,4 @@ Rules of Hooks
   1. Only call Hooks at the Top Level
   2. Don’t call Hooks inside loops, conditions, or nested functions.
   3. Call Hooks from React Function Components
-  4. Call Hooks from regular JavaScript functions and classes
-  5. Call Hooks from custom Hooks
+  4. Call Hooks from custom Hooks 
