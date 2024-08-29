@@ -8,7 +8,7 @@ Netflix (4 hours)
 
 Setting up REST API for the app 
 User manager CRUD App 
-  Create User 
+  Create User [DONE]
   List Users 
   User Details 
     Edit user [TODO]
