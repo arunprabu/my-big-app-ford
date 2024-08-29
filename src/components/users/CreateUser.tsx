@@ -1,8 +1,10 @@
 /** @jsxImportSource @emotion/react */
-import React from "react";
-import { Button, Container, TextField, Typography } from "@mui/material";
+import { Alert, Button, Container, TextField, Typography } from "@mui/material";
 import styled from "@emotion/styled";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { useState } from "react";
+// npm i react-hook-form
 
 const FormContainer = styled(Container)`
   margin-top: 40px;
@@ -30,25 +32,46 @@ const SubmitButton = styled(Button)`
 
 interface IFormInputs {
   name: string;
-  phone: string;
+  phone: number;
   email: string;
 }
 
-const CreateUser: React.FC = () => {
+const CreateUser = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<IFormInputs>();
+  const [isSaved, setIsSaved] = useState(false); // positive state
 
-  const onSubmit: SubmitHandler<IFormInputs> = (data) => {
-    console.log(data);
-    // Handle form submission
+  const onSubmit = (formData: IFormInputs) => {
+    // form data comes here
+    console.log(formData);
+
+    // Let's submit form data to the backend
+    // 1. What is the backend api url? https://jsonplaceholder.typicode.com/users
+    // 2. What is the HTTP method? POST
+    // 3. What is the REST API Client? npm i axios
+
+    axios
+      .post("https://jsonplaceholder.typicode.com/users", formData)
+      .then((res: any) => {
+        // successful response
+        console.log(res.data);
+        setIsSaved(true); // set isSaved state to true
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        console.log("It is over");
+      });
   };
 
   return (
     <FormContainer>
       <Title variant="h4">Create User</Title>
+
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormGroup>
           <TextField
@@ -66,13 +89,7 @@ const CreateUser: React.FC = () => {
             label="Phone"
             variant="outlined"
             fullWidth
-            {...register("phone", {
-              required: "Phone is required",
-              pattern: {
-                value: /^[0-9]{10}$/,
-                message: "Please enter a valid 10-digit phone number",
-              },
-            })}
+            {...register("phone", { required: "Phone is required" })}
             error={!!errors.phone}
             helperText={errors.phone?.message}
           />
@@ -83,26 +100,24 @@ const CreateUser: React.FC = () => {
             label="Email"
             variant="outlined"
             fullWidth
-            {...register("email", {
-              required: "Email is required",
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "Invalid email address",
-              },
-            })}
+            {...register("email", { required: "Email is required" })}
             error={!!errors.email}
             helperText={errors.email?.message}
           />
         </FormGroup>
 
         <SubmitButton
-          type="submit"
           variant="contained"
           color="primary"
           size="large"
+          type="submit"
         >
           Create User
         </SubmitButton>
+
+        {isSaved && (
+          <Alert severity="success">User created successfully!</Alert>
+        )}
       </form>
     </FormContainer>
   );
