@@ -28,6 +28,8 @@ const fetchUserDetails = async () => {
   return response.json();
 };
 
+
+
 const UserDetails = () => {
   // reading url param id from the route
   let { id } = useParams(); // why id? refer Routing file

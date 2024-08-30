@@ -9,9 +9,15 @@ const StyledBox = styled(Box)`
 
 // Functional component with Arrow Function
 const HomePage = () => {
+  var x = 10;
+
   // must return JSX
   return (
     <StyledBox>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+        laboriosam labore, consectetur eaque veniam at sunt corporis tempore
+      </p>
       <Typography variant="h1">Home Page</Typography>
       <Typography variant="body2">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae

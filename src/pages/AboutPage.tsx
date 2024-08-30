@@ -1,7 +1,7 @@
-import { Container } from "@mui/material";
+import { Button, Container } from "@mui/material";
 import { useRef, useState } from "react";
 
-const AboutPage = () => {
+const AboutPage = (props: any) => {
   const [name, setName] = useState("");
   const searchInputRef = useRef<HTMLInputElement>(null);
 
@@ -34,6 +34,9 @@ const AboutPage = () => {
           onChange={handleSearchQueryChange}
         />
       </div>
+
+      <p>Error Handling - Demo</p>
+      <Button variant="contained" onClick={props.x()}>Click Me</Button>
     </Container>
   );
 };

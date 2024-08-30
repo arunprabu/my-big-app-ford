@@ -25,6 +25,7 @@ import TodosPage from "./pages/TodosPage";
 import AboutPage from "./pages/AboutPage";
 import CreateUser from "./components/users/CreateUser";
 import UserDetails from "./components/users/UserDetails";
+import { ErrorBoundary } from "react-error-boundary";
 
 const queryClient = new QueryClient();
 
@@ -36,18 +37,20 @@ function App() {
       <BrowserRouter>
         <Header />
 
-        {/* Configure the routes */}
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/netflix" element={<NetflixPage />} />
-          <Route path="/users" element={<UsersPage />} />
-          <Route path="/users/create" element={<CreateUser />} />
-          {/* id is the url parameter in the above route */}
-          <Route path="/users/:id" element={<UserDetails />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/todos" element={<TodosPage />} />
-          <Route path="/about" element={<AboutPage />} />
-        </Routes>
+        <ErrorBoundary fallback={<h1>Something went wrong</h1>}>
+          {/* Configure the routes */}
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/netflix" element={<NetflixPage />} />
+            <Route path="/users" element={<UsersPage />} />
+            <Route path="/users/create" element={<CreateUser />} />
+            {/* id is the url parameter in the above route */}
+            <Route path="/users/:id" element={<UserDetails />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/todos" element={<TodosPage />} />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
+        </ErrorBoundary>
 
         <Footer />
       </BrowserRouter>

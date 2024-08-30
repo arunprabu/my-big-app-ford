@@ -9,10 +9,14 @@ Netflix (4 hours)
 Setting up REST API for the app 
 User manager CRUD App 
   Create User [DONE]
-  List Users 
-  User Details 
+  List Users [DOME]
+  User Details [DONE]  
     Edit user [TODO]
     Delete User [TODO]
+
+
+React Query  
+Axios and fetch 
 
 =====
 E-commerce App (Context API)
