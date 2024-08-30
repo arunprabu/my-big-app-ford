@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 import styled from "@emotion/styled";
+import { useParams } from "react-router-dom";
 
 const StyledContainer = styled("div")`
   display: flex;
@@ -20,16 +21,21 @@ const StyledContainer = styled("div")`
 
 const fetchUserDetails = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
+  console.log(response);
+  if(!response.ok){
+    throw new Error("Network response was not ok")
   }
   return response.json();
 };
 
 const UserDetails = () => {
-  const { isLoading, isError, data, error } = useQuery({
-    queryKey: ["fetchUserDetails"],
-    queryFn: fetchUserDetails
+  // reading url param id from the route
+  let { id } = useParams(); // why id? refer Routing file
+  console.log(id);
+
+  const { isLoading, isError, data: user, error} = useQuery({
+    queryKey: ["userDetails"],
+    queryFn: fetchUserDetails,
   });
 
   if (isLoading) {
@@ -44,7 +50,7 @@ const UserDetails = () => {
     return (
       <StyledContainer>
         <Alert severity="error">
-          An error has occurred: {(error as Error).message}
+          An error has occurred. {(error as Error).message}
         </Alert>
       </StyledContainer>
     );
@@ -60,13 +66,13 @@ const UserDetails = () => {
               gutterBottom
               sx={{ color: "text.secondary", fontSize: 14 }}
             >
-              User Id: {data.id}
+              User Id: {user?.id}
             </Typography>
             <Typography variant="h5" component="div">
-              {data.name}
+              {user?.name}
             </Typography>
-            <Typography variant="body2">Phone: {data.phone}</Typography>
-            <Typography variant="body2">Email: {data.email}</Typography>
+            <Typography variant="body2">Phone: {user?.phone}</Typography>
+            <Typography variant="body2">Email: {user?.email}</Typography>
           </CardContent>
           <CardActions>
             <Button size="small" variant="contained">

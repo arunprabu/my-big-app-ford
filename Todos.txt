@@ -2,5 +2,8 @@
 2. Setup Active Menu
 3. Implement Page Not Found
 4. Implement Manage Favorite  by passing id from the child component -- in RecommendedShow to RecommendedShowList
-5. Implement Loading State and error state in CreateUser.
+5. Implement Loading State and error state in CreateUser using react-toastify
+6. Form Validation in CreateUser using react-hook-form
+7. Pass the url param id to fetch api in UserDetails 
+
 
