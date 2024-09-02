@@ -35,8 +35,14 @@ const AboutPage = (props: any) => {
         />
       </div>
 
-      <p>Error Handling - Demo</p>
-      <Button variant="contained" onClick={props.x()}>Click Me</Button>
+      <p>Runtime Error Handling - Demo</p>
+      <Button variant="contained" 
+        // onClick={props.x()}
+        > 
+        Click Me -- Enable the onClick prop to see the error
+      </Button>
+
+
     </Container>
   );
 };

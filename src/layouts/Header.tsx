@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCartStore } from "../store/useCartStore";
 
 const menuList = [
   { id: 1, title: "Home", url: "/" },
@@ -21,6 +22,7 @@ const menuList = [
   { id: 4, title: "Todos", url: "/todos" },
   { id: 5, title: "Products", url: "/products" },
   { id: 6, title: "About", url: "/about" },
+  { id: 7, title: "Counter", url: "/counter" },
 ];
 
 // Functional Component with Named Function
@@ -28,6 +30,8 @@ function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
+
+  const { cartItems } = useCartStore();
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -151,6 +155,9 @@ function Header() {
                 </Button>
               </Link>
             ))}
+            <Button variant="contained" color="error">
+              Cart (   {cartItems.length}   )
+            </Button>
           </Box>
         </Toolbar>
       </Container>

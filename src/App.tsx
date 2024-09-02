@@ -26,6 +26,7 @@ import AboutPage from "./pages/AboutPage";
 import CreateUser from "./components/users/CreateUser";
 import UserDetails from "./components/users/UserDetails";
 import { ErrorBoundary } from "react-error-boundary";
+import CounterPage from "./pages/CounterPage";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ function App() {
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/todos" element={<TodosPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/counter" element={<CounterPage />} />
           </Routes>
         </ErrorBoundary>
 

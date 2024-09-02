@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import styled from '@emotion/styled'
+import { useCounterStore } from "../store/useCounterStore";
 
 // styled component using @emotion [RECOMMENDED]
 const StyledBox = styled(Box)`
@@ -9,7 +10,8 @@ const StyledBox = styled(Box)`
 
 // Functional component with Arrow Function
 const HomePage = () => {
-  var x = 10;
+  const { count } = useCounterStore();
+  console.log(count);
 
   // must return JSX
   return (

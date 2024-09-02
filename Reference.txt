@@ -6,7 +6,7 @@ Netflix (4 hours)
   Lists & Keys  [DONE]
   Conditional Rendering  [DONE]
 
-Setting up REST API for the app 
+Setting up REST API for the app [DONE]
 User manager CRUD App 
   Create User [DONE]
   List Users [DOME]
@@ -15,18 +15,18 @@ User manager CRUD App
     Delete User [TODO]
 
 
-React Query  
-Axios and fetch 
+React Query  [DONE]
+Axios and fetch [DONE]
 
 =====
 E-commerce App (Context API)
   List Products 
   Add to Cart 
 
-Todos App (useReducer hook)
+Debugging  [DONE]
 
-Debugging 
-PErformance tuning 
+
+Performance tuning 
 
 Zustand 
 
@@ -110,3 +110,9 @@ Rules of Hooks
   2. Don’t call Hooks inside loops, conditions, or nested functions.
   3. Call Hooks from React Function Components
   4. Call Hooks from custom Hooks 
+
+Error boundaries do not catch errors for:
+  Event handlers (learn more)
+  Asynchronous code (e.g. setTimeout or requestAnimationFrame callbacks)
+  Server side rendering
+  Errors thrown in the error boundary itself (rather than its children)
