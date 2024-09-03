@@ -5,5 +5,5 @@
 5. Implement Loading State and error state in CreateUser using react-toastify
 6. Form Validation in CreateUser using react-hook-form
 7. Pass the url param id to fetch api in UserDetails 
-
+8. Implement Add todo in Todos
 
